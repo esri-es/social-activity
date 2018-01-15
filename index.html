@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Social Networks Social Sharing Helper</title>
+    <title>Esri España - Actividad en redes sociales</title>
     <meta charset="utf-8">
 
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
@@ -79,11 +79,11 @@
         <div class="column-24">
         <header class="top-nav-flex-title">
 
-            <a href="#" class="top-nav-title">Social Networks Social Sharing Helper</a>
+            <a href="#" class="top-nav-title">Esri España - Actividad en redes sociales</a>
         </header>
             <nav class="top-nav-flex-list text-right" role="navigation" aria-labelledby="usernav">
 
-                <a class="top-nav-link" href="https://docs.google.com/spreadsheets/d/1wbm1YSi-fqRCP4o8eswzR8UTU17GIJnQRphAOLGtgRM/edit#gid=1995811734">Suggest more news</a>
+                <a class="top-nav-link" href="https://docs.google.com/spreadsheets/d/1wbm1YSi-fqRCP4o8eswzR8UTU17GIJnQRphAOLGtgRM/edit#gid=1995811734">Sugiere más noticias</a>
             </nav>
         </div>
     </div>
@@ -98,9 +98,9 @@
             <table class="modifier-class table-striped">
                 <thead>
                     <tr>
-                        <th class="text-center">Date</th>
-                        <th>News</th>
-                        <th class="text-center">Staff involved</th>
+                        <th class="text-center">Fecha</th>
+                        <th>Título de la noticia</th>
+                        <th class="text-center">Personal involucrado</th>
                         <th class="text-center">Twitter</th>
                         <th class="text-center">Linkedin</th>
                         <th class="text-center">Facebook</th>
@@ -244,7 +244,7 @@ function buildStaffHash(data){
 }
 
 function loadMsgs(data){
-    var msgs = data.feed.entry;//.slice(0,data.feed.entry.length);
+    var msgs = data.feed.entry.reverse();//.slice(0,data.feed.entry.length);
     console.log("msgs=",msgs);
 
     msgs = parseMsgs(msgs);
