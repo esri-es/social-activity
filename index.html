@@ -149,56 +149,58 @@
 
 <script id="theTmpl" type="text/x-jsrender">
 {{for msgs}}
-    <tr>
-        <td class="text-center">
-            {{:gsx$fecha.$t}}
-        </td>
-        <td>
-            <a href="{{:gsx$link.$t}}">{{:gsx$title.$t}}</a>
-        </td>
-        <td class="text-center">
-            <ul class="mentions">
-            {{for mentions}}
-                {{if #data}}
-                    <li class="tooltip" data-tooltip-content="#{{:slugify}}" aria-hidden="true">
-                        {{if #getIndex() > 0}}|{{/if}}
-                        {{:#data["nombre"]}}
-                    </li>
+    {{if gsx$link.$t}}
+        <tr>
+            <td class="text-center">
+                {{:gsx$fecha.$t}}
+            </td>
+            <td>
+                <a href="{{:gsx$link.$t}}">{{:gsx$title.$t}}</a>
+            </td>
+            <td class="text-center">
+                <ul class="mentions">
+                {{for mentions}}
+                    {{if #data}}
+                        <li class="tooltip" data-tooltip-content="#{{:slugify}}" aria-hidden="true">
+                            {{if #getIndex() > 0}}|{{/if}}
+                            {{:#data["nombre"]}}
+                        </li>
+                    {{/if}}
+                {{/for}}
+                </ul>
+            </td>
+            <td class="text-center">
+                <a href="{{:newTwitterMsg}}" target="_blank">
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                </a>
+                {{if existingTwitterMsg}}
+                <a href="{{:existingTwitterMsg}}" target="_blank">
+                    <i class="fa fa-retweet" aria-hidden="true"></i>
+                </a>
                 {{/if}}
-            {{/for}}
-            </ul>
-        </td>
-        <td class="text-center">
-            <a href="{{:newTwitterMsg}}" target="_blank">
-                <i class="fa fa-twitter-square" aria-hidden="true"></i>
-            </a>
-            {{if existingTwitterMsg}}
-            <a href="{{:existingTwitterMsg}}" target="_blank">
-                <i class="fa fa-retweet" aria-hidden="true"></i>
-            </a>
-            {{/if}}
-        </td>
-        <td class="text-center">
-            <a href="{{:newLinkedinMsg}}" target="_blank">
-                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-            </a>
-            {{if existingLinkedinMsg}}
-            <a href="{{:existingLinkedinMsg}}" target="_blank">
-                <i class="fa fa-share" aria-hidden="true"></i>
-            </a>
-            {{/if}}
-        </td>
-        <td class="text-center">
-            <a href="{{:newFacebookMsg}}" target="_blank">
-                <i class="fa fa-facebook-square" aria-hidden="true"></i>
-            </a>
-            {{if existingFacebookMsg}}
-            <a href="{{:existingFacebookMsg}}" target="_blank">
-                <i class="fa fa-share" aria-hidden="true"></i>
-            </a>
-            {{/if}}
-        </td>
-    </tr>
+            </td>
+            <td class="text-center">
+                <a href="{{:newLinkedinMsg}}" target="_blank">
+                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                </a>
+                {{if existingLinkedinMsg}}
+                <a href="{{:existingLinkedinMsg}}" target="_blank">
+                    <i class="fa fa-share" aria-hidden="true"></i>
+                </a>
+                {{/if}}
+            </td>
+            <td class="text-center">
+                <a href="{{:newFacebookMsg}}" target="_blank">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                </a>
+                {{if existingFacebookMsg}}
+                <a href="{{:existingFacebookMsg}}" target="_blank">
+                    <i class="fa fa-share" aria-hidden="true"></i>
+                </a>
+                {{/if}}
+            </td>
+        </tr>
+    {{/if}}
 {{/for}}
 </script>
 
